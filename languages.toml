@@ -1,0 +1,10 @@
+[language-server.zls]
+command = "zls"
+
+[[zig]]
+name= "zig"
+auto-format = true
+language-servers = ["zls"]
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
