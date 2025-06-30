@@ -8,3 +8,57 @@ language-servers = ["zls"]
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language-server.html-languageserver]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+[language-server.css-languageserver]
+command = "vscode-css-language-server"
+args = ["--stdio"]
+
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.eslint-ls]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+# Asociación de lenguajes con servidores
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server", "eslint-ls"]
+
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "eslint-ls"]
+
+[[language]]
+name = "html"
+language-servers = ["html-languageserver"]
+
+[[language]]
+name = "css"
+language-servers = ["css-languageserver", "tailwindcss-ls"]
+
+[[language]]
+name = "scss"
+language-servers = ["css-languageserver"]
+
+[[language]]
+name = "svelte"
+language-servers = ["svelteserver"]
+
+[[language]]
+name = "vue"
+language-servers = ["vls"]
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server", "eslint-ls"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "file.js"] }
